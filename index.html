@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Chih-Yu Maggie Jao | CV</title>
+  <style>
+    :root{--navy:#142849}
+    body{margin:0;background:#f5f5f5;color:#222;font-family:Georgia,serif}
+    header{padding:16px 24px;background:#fff;border-bottom:2px solid var(--navy);position:sticky;top:0;z-index:1}
+    .heading{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+    h1{font-size:21px;margin:0;flex:1}a{color:var(--navy)}
+    .heading a{white-space:nowrap}
+    nav{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
+    nav a{padding:8px 12px;border:1px solid #14284933;border-radius:4px;text-decoration:none;font-size:15px}
+    nav a[aria-current="page"]{color:#fff;background:var(--navy);border-color:var(--navy)}
+    main{max-width:980px;margin:24px auto;padding:0 14px}
+    main img{display:block;width:100%;height:auto;margin-bottom:24px;background:#fff;box-shadow:0 2px 12px #0002}
+    [hidden]{display:none!important}
+    @media(max-width:600px){header{padding:14px}h1{flex-basis:100%}main{margin-top:14px}}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="heading">
+      <h1>Chih-Yu Maggie Jao · Curriculum Vitae</h1>
+      <a id="pdf-link" href="CV.pdf?v=20260928-r17">Open / download PDF</a>
+    </div>
+    <nav aria-label="CV versions">
+      <a id="full-tab" href="?view=full&amp;v=20260928-r17" aria-current="page">Full CV · 2 pages</a>
+      <a id="onepage-tab" href="?view=onepage&amp;v=20260928-r17">One-page A4</a>
+    </nav>
+  </header>
+  <main aria-label="Curriculum vitae of Chih-Yu Maggie Jao">
+    <section id="full-version" aria-label="Full academic CV, two pages">
+      <a href="CV.pdf?v=20260928-r17" aria-label="Open full CV PDF">
+        <img src="CV-page-1.png?v=20260928-r17" alt="Full CV page 1: education, program certificate, GPA, awards, research grants, research experience, research interests and manuscript in preparation" width="1061" height="1500">
+        <img src="CV-page-2.png?v=20260928-r17" alt="Full CV page 2: conference presentations, selected coursework, 2024–2025 service team leadership and 2023–2025 club service" width="1061" height="1500" loading="lazy">
+      </a>
+    </section>
+    <section id="onepage-version" aria-label="One-page A4 CV" hidden>
+      <a href="CV-OnePage.pdf?v=20260928-r17" aria-label="Open one-page A4 PDF">
+        <img src="CV-OnePage-page-1.png?v=20260928-r17" alt="One-page A4 CV: education, program certificate, research experience, selected research outputs, leadership, languages and research interests" width="1061" height="1500">
+      </a>
+    </section>
+    <noscript><p><a href="CV-OnePage.pdf?v=20260928-r17">Download the one-page A4 CV</a></p></noscript>
+  </main>
+  <script>
+    const onePage = new URLSearchParams(window.location.search).get('view') === 'onepage';
+    if (onePage) {
+      document.getElementById('full-version').hidden = true;
+      document.getElementById('onepage-version').hidden = false;
+      document.getElementById('full-tab').removeAttribute('aria-current');
+      document.getElementById('onepage-tab').setAttribute('aria-current', 'page');
+      document.getElementById('pdf-link').href = 'CV-OnePage.pdf?v=20260928-r17';
+    }
+  </script>
+</body>
+</html>
