@@ -1,5 +1,5 @@
 # Chih-Yu Maggie Jao | CV
 
-[Read the two-page CV](https://magpsy.github.io/CV-public/?view=full) · [Read the one-page A4 CV](https://magpsy.github.io/CV-public/?view=onepage)
+[Read the full two-page CV](https://magpsy.github.io/CV-public/)
 
-[Two-page PDF](CV.pdf) · [One-page PDF](CV-OnePage.pdf)
+[Download the full PDF](CV.pdf)
