@@ -28,12 +28,5 @@
       <img src="CV-OnePage-page-1.png?v=20261118" alt="CV: education, research experience, selected research outputs, leadership, languages and interests" width="1061" height="1500">
     </a>
   </main>
-  <script type="module">
-    import { currentCV } from "./current-cv.js";
-    currentCV().then(({ pdf, image }) => {
-      document.querySelectorAll('a[href^="CV-OnePage.pdf"]').forEach(link => link.href = pdf);
-      document.querySelector("main img").src = image;
-    }).catch(() => {});
-  </script>
 </body>
 </html>
