@@ -1,7 +1,7 @@
-// Keep existing readers linked to the latest published selection.
 export async function currentCV() {
-  return {
-    pdf: new URL("./CV-OnePage.pdf", import.meta.url).href,
-    image: new URL("./CV-OnePage-page-1.png", import.meta.url).href
-  };
+  const manifest = new URL("./current.json", import.meta.url);
+  const response = await fetch(manifest, { cache: "no-store" });
+  if (!response.ok) throw new Error("CV unavailable");
+  const { pdf, image } = await response.json();
+  return { pdf: new URL(pdf, manifest).href, image: new URL(image, manifest).href };
 }
